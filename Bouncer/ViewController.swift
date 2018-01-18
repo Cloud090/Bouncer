@@ -17,20 +17,22 @@ class ViewController: UIViewController {
     
     
     @IBAction func button(_ sender: Any) {
-        buttonCount = buttonCount + 0
+        buttonCount = buttonCount + 1
         print (buttonCount)
+        if buttonCount >= 0 {view.backgroundColor = UIColor.red
+            welcome.textColor = UIColor.white
+            welcome.text = "Welcome to my app!!"}
         
-        if buttonCount > 1 {  view.backgroundColor = UIColor.blue
+        if buttonCount >= 1 {  view.backgroundColor = UIColor.blue
             welcome.text = "Let's Get Started"}
 
-        view.backgroundColor = UIColor.blue
-        welcome.text = "Let's Get Started"
         
-        if buttonCount > 1 {view.backgroundColor = UIColor.green; welcome.text = "On every page my backround Colour changes";
-            welcome.textColor = UIColor.black
-       
+        
+    if buttonCount >= 2 {view.backgroundColor = UIColor.green; welcome.text = "On every page my backround Colour changes"
+                welcome.textColor = UIColor.black}
+        if buttonCount >= 3 {view.backgroundColor = UIColor.black; welcome.text = "See!!!"
+            welcome.textColor = UIColor.white}
             
-        }
         
     }
     
