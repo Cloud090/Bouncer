@@ -9,23 +9,33 @@
 import UIKit
 
 class ViewController: UIViewController {
-     var buttonCount = 0
+   // var buttonCount = 0
     @IBOutlet weak var welcome: UILabel!
     
-    @IBOutlet weak var TopText: UITextField!
+    
+    @IBOutlet weak var topText: UITextField!
     
     
-    @IBOutlet weak var BottomText: UITextField!
-
+    @IBOutlet weak var bottomText: UITextField!
     
-  
+    @IBOutlet weak var additionSwitch: UISwitch!
+    
     @IBAction func button(_ sender: Any) {
-        print (TopText.text!)
-        print (BottomText.text!)
-        let sum = Double (TopText.text!)! + Double(BottomText.text!)!
-        welcome.text = "\(TopText.text!) + \(BottomText.text!) = \(sum)"
- 
-        buttonCount = buttonCount + 1
+        
+    print (topText.text!)
+    print (bottomText.text!)
+        
+        let addition = additionSwitch.isOn
+        
+        if addition {let sum = Double (topText.text!)! + Double(bottomText.text!)!
+            welcome.text = "\(topText.text!) + \(bottomText.text!) = \(sum)"
+        } else{let sum = Double (topText.text!)! - Double(bottomText.text!)!
+            welcome.text = "\(topText.text!) - \(bottomText.text!) = \(sum)"
+        }
+        
+        
+        /*
+ buttonCount = buttonCount + 1
         print (buttonCount)
         if buttonCount >= 0 {view.backgroundColor = UIColor.red
             welcome.textColor = UIColor.white
@@ -39,14 +49,11 @@ class ViewController: UIViewController {
     if buttonCount >= 2 {view.backgroundColor = UIColor.green; welcome.text = "On every page my backround Colour changes"
                 welcome.textColor = UIColor.black}
         if buttonCount >= 3 {view.backgroundColor = UIColor.black; welcome.text = "See!!!"
-            welcome.textColor = UIColor.white
+            welcome.textColor = UIColor.white}
             
-        }
-        
-            
-    
+        */
     }
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
